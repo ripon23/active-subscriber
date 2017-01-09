@@ -1,0 +1,3 @@
+[02-Jan-2016 11:38:38 Asia/Dhaka] PHP Fatal error:  Call to a member function initialize() on a non-object in /home/aamra24/public_html/bgb/application/controllers/reports/report.php on line 228
+[02-Jan-2016 11:38:50 Asia/Dhaka] PHP Fatal error:  Call to a member function initialize() on a non-object in /home/aamra24/public_html/bgb/application/controllers/reports/report.php on line 228
+[25-Jan-2016 17:29:08 Asia/Dhaka] PHP Fatal error:  Call to a member function initialize() on a non-object in /home/aamra24/public_html/bgb/application/controllers/reports/report.php on line 257

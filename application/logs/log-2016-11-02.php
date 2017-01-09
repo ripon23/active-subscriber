@@ -1,0 +1,14 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2016-11-02 09:38:38 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:40:19 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:40:34 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:40:43 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:40:58 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:12 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:22 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:30 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:33 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:41 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73
+ERROR - 2016-11-02 09:41:44 --> Severity: 8192  --> mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead C:\wamp64\www\bgb\system\database\drivers\mysql\mysql_driver.php 73

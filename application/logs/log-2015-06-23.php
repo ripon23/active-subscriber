@@ -1,0 +1,59 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bp_sys_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 891
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bp_sys C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 949
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bp_dia_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 980
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bp_dia C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1039
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_blood_glucose_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1067
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_greenStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1079
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_greenEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1080
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_yelloStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1089
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_yelloEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1090
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_OrangStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1099
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_OrangEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1100
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_redStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1109
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: blood_glucose_redEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1110
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_blood_glucose C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1126
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_blood_hemoglobin_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1156
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_blood_hemoglobin C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1215
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_pulse_rate_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1245
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_pulse_rate C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1314
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bmi_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1344
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_bmi C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1403
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_waist_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1433
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: waist_greenStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1445
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: waist_greenEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1446
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: waist_yelloStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1455
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: waist_yelloEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1456
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_waist C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1472
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_wh_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1497
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: wh_greenStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1509
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: wh_greenEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1510
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: wh_yelloStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1519
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: wh_yelloEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1520
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_wh C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1536
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_temperature_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1561
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_greenStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1573
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_greenEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1574
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_yelloStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1583
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_yelloEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1584
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_OrangStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1593
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: temperature_OrangEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1594
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_temperature C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1610
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_urinary_ph_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1636
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_urinary_ph C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1705
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_cholesterol_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1731
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_cholesterol C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1790
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_uric_acid_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1816
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_greenStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1828
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_greenEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1829
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_orgStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1838
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_orgEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1839
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_redStart C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1848
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: uric_acid_redEnd C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1849
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_uric_acid C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1865
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_oxygen_of_blood_date C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1890
+ERROR - 2015-06-23 15:39:14 --> Severity: Notice  --> Undefined variable: all_oxygen_of_blood C:\wamp\www\ripon\application\views\patients\view_single_patient_profile.php 1949
+ERROR - 2015-06-23 09:50:58 --> Could not find the language line "menu_report"
+ERROR - 2015-06-23 09:51:04 --> Could not find the language line "menu_report"
+ERROR - 2015-06-23 10:42:03 --> Could not find the language line "menu_report"
