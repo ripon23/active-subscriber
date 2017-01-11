@@ -13,11 +13,16 @@ class Active_subscriber extends CI_Controller {
 		
 		
 	}
-
+	
+	
+	/*********************** Active Subscriber Migration   **********************************/
+	/* database: pmrs_test, table: t_subscribers */
+	
+	
 	function index()
 	{
 		echo '<h4>Active Subscriber Migration</h4>';
-		$searchterm="SELECT * FROM t_subscribers WHERE migration_status=0 ORDER BY int_subscriber_key ASC LIMIT 0, 400";
+		$searchterm="SELECT * FROM t_subscribers WHERE migration_status=0 ORDER BY int_subscriber_key ASC LIMIT 0, 50";
         $subscriber_list=$this->general_model->get_all_querystring_result($searchterm);
 		$date_from='2016-09-01';
 		$date_to='2016-12-31';
@@ -34,7 +39,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Preg)";
 				$services_days=292;
 				echo $slist->tx_name;
@@ -73,7 +78,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Baby)";
 				$services_days=364;
 					if($slist->tx_child_birth)
@@ -110,7 +115,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Guardian)";
 				$services_days=364;
 					if($slist->tx_child_birth)
@@ -172,7 +177,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Husband)";
 				$services_days=364;
 					if($slist->tx_child_birth)
@@ -208,7 +213,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Mother)";
 				$services_days=364;
 					if($slist->tx_child_birth)
@@ -228,7 +233,7 @@ class Active_subscriber extends CI_Controller {
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,$date_from,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
@@ -244,7 +249,7 @@ class Active_subscriber extends CI_Controller {
 				$int_subscriber_key	=$slist->int_subscriber_key;
 				echo "int_subscriber_key=".$int_subscriber_key." ";
 				$tx_reg_id=$slist->tx_reg_id;
-				echo "tx_reg_id=".$int_subscriber_key." ";
+				//echo "tx_reg_id=".$int_subscriber_key." ";
 				echo $slist->tx_mobile."(Mother-in-Law)";
 				$services_days=364;
 					if($slist->tx_child_birth)
@@ -297,11 +302,11 @@ class Active_subscriber extends CI_Controller {
 							'data_source'=>'t_subscribers'
 							);
 			
-			/*echo "<pre>";
+			echo "<pre>";
 			print_r($insert_data);
-			echo "</pre>";*/
+			echo "</pre>";
 			
-			$success_or_fail1=$this->general_model->save_into_table('t_subscribers_for_report', $insert_data);
+			/*$success_or_fail1=$this->general_model->save_into_table('t_subscribers_for_report', $insert_data);
 				if($success_or_fail1)
 				{
 				// Update the status
@@ -309,17 +314,17 @@ class Active_subscriber extends CI_Controller {
 								  'migration_status'=>1
 								 );
 				$this->general_model->update_table('t_subscribers', $table_data,'int_subscriber_key', $int_subscriber_key);
-				}
+				}*/
 				
 			}
-			else
+			/*else
 			{
 			$table_data=array(
 								  'migration_status'=>2
 								 );
 				$this->general_model->update_table('t_subscribers', $table_data,'int_subscriber_key', $int_subscriber_key);	
 									
-			}
+			}*/
 		}// End foreach		
 		$this->load->view('active_subscriber', isset($data) ? $data : NULL);	
 		

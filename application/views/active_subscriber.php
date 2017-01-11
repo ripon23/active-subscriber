@@ -2,7 +2,7 @@
 <html>
 <head>
 	<?php //echo $this->load->view('head'); ?>
-    <meta http-equiv="refresh" content="8; URL=http://localhost/aponjon_reports/active-subscriber/active_subscriber/">
+    <meta http-equiv="refresh" content="5; URL=http://localhost/aponjon_reports/active-subscriber/active_subscriber/">
 </head>
 <body>
 <?php //echo $this->load->view('header',array('active' => 'aponjon')); ?>
