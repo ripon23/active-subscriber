@@ -2,60 +2,44 @@
 
 class General_model extends CI_Model {		
 	
-	function get_form_date($calculated_date,$date_from, $dtt_registration)
+	function get_form_date($lmp_or_dob, $dtt_registration)
 	{
-	$str_to_time_calculated_date=strtotime($calculated_date);
-	$str_to_time_date_from=strtotime($date_from);
-	$str_to_time_dtt_registration=strtotime($dtt_registration);
-	
-		if($str_to_time_calculated_date < $str_to_time_date_from)
+	$lmp_or_dob_date_from=strtotime($lmp_or_dob);
+	$str_to_time_dtt_registration=strtotime($dtt_registration);	
+		if($lmp_or_dob_date_from > $str_to_time_dtt_registration)
 		{
-		$smallest_date= $calculated_date;
+		$largest_date= $lmp_or_dob;
 		}
 		else
 		{
-		$smallest_date= $date_from;
-		}
-	
-		if(strtotime($smallest_date) < $str_to_time_dtt_registration)
-		{
-		$smallest_date= $smallest_date;
-		}
-		else
-		{
-		$smallest_date= $dtt_registration;	
-		}
-	
-	return $smallest_date;
-	
+		$largest_date= $dtt_registration;
+		}				
+	return $largest_date;	
 	}
 	
-	function get_to_date($calculated_date,$date_to, $dtt_deregistration)
-	{
-	$str_to_time_calculated_date=strtotime($calculated_date);
-	$str_to_time_date_to=strtotime($date_to);	
-	$str_to_time_dtt_deregistration=strtotime($dtt_deregistration);	
 	
-	if($str_to_time_calculated_date < $str_to_time_date_to)
+	function get_to_date($calculated_date,$dtt_deregistration)
+	{
+	$str_to_time_calculated_date=strtotime($calculated_date);	
+		
+	
+	if($dtt_deregistration)
+	{
+		$str_to_time_dtt_deregistration=strtotime($dtt_deregistration);
+		if($str_to_time_calculated_date < $str_to_time_dtt_deregistration)
 		{
 		$smallest_date= $calculated_date;
 		}
 		else
 		{
-		$smallest_date= $date_to;	
+		$smallest_date= $dtt_deregistration;	
 		}
-		
-	if($dtt_deregistration)	
-		{
-			if(strtotime($smallest_date) < $str_to_time_dtt_deregistration)
-			{
-			$smallest_date= $smallest_date;
-			}
-			else
-			{
-			$smallest_date= $dtt_deregistration;	
-			}
-		}
+	}
+	else
+	{
+	$smallest_date= $calculated_date;	
+	}
+	
 	return $smallest_date;
 	}
 	

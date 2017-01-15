@@ -22,7 +22,7 @@ class Active_subscriber extends CI_Controller {
 	function index()
 	{
 		echo '<h4>Active Subscriber Migration</h4>';
-		$searchterm="SELECT * FROM t_subscribers WHERE migration_status=0 ORDER BY int_subscriber_key ASC LIMIT 0, 50";
+		$searchterm="SELECT * FROM t_subscribers WHERE migration_status=0 ORDER BY int_subscriber_key ASC LIMIT 0, 500";
         $subscriber_list=$this->general_model->get_all_querystring_result($searchterm);
 		$date_from='2016-09-01';
 		$date_to='2016-12-31';
@@ -37,12 +37,13 @@ class Active_subscriber extends CI_Controller {
 				/************** Pregnant  ****************/
 				$int_subscriber_type_key=1;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";	
+				//echo "int_subscriber_key=".$int_subscriber_key." ";	
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Preg)";
+				//echo $slist->tx_mobile."(Preg)";
 				$services_days=292;
-				echo $slist->tx_name;
+				//echo $slist->tx_name;
 				
 					if($slist->tx_last_menstrual_period)
 					{					
@@ -50,24 +51,25 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_last_menstrual_period, 2, 2);
 					$yy='20'.substr($slist->tx_last_menstrual_period, 4, 2);			
 					$lmp_yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " LMP=".$lmp_yyyymmdd;
+					//echo " LMP=".$lmp_yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($lmp_yyyymmdd);
 					$date = strtotime("+42 week", $date);
-					$calculated_date =date('Y-m-d', $date);
-					
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$calculated_date =date('Y-m-d', $date);										
+					$service_from=$this->general_model->get_form_date($lmp_yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
@@ -76,10 +78,11 @@ class Active_subscriber extends CI_Controller {
 				/************** Baby  ****************/	
 				$int_subscriber_type_key=2;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";
+				//echo "int_subscriber_key=".$int_subscriber_key." ";
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Baby)";
+				//echo $slist->tx_mobile."(Baby)";
 				$services_days=364;
 					if($slist->tx_child_birth)
 					{					
@@ -87,24 +90,25 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_child_birth, 2, 2);
 					$yy='20'.substr($slist->tx_child_birth, 4, 2);			
 					$yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " DOB=".$yyyymmdd;
+					//echo " DOB=".$yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
 					
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
@@ -113,10 +117,11 @@ class Active_subscriber extends CI_Controller {
 				/************** Guardian  ****************/	
 				$int_subscriber_type_key=3;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";
+				//echo "int_subscriber_key=".$int_subscriber_key." ";
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Guardian)";
+				//echo $slist->tx_mobile."(Guardian)";
 				$services_days=364;
 					if($slist->tx_child_birth)
 					{					
@@ -124,18 +129,20 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_child_birth, 2, 2);
 					$yy='20'.substr($slist->tx_child_birth, 4, 2);			
 					$yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " DOB=".$yyyymmdd;
+					//echo " DOB=".$yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
+					//$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
@@ -149,24 +156,25 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_last_menstrual_period, 2, 2);
 					$yy='20'.substr($slist->tx_last_menstrual_period, 4, 2);			
 					$lmp_yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " LMP=".$lmp_yyyymmdd;
+					//echo " LMP=".$lmp_yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($lmp_yyyymmdd);
 					$date = strtotime("+42 week", $date);
 					$calculated_date =date('Y-m-d', $date);
 					
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
@@ -175,10 +183,11 @@ class Active_subscriber extends CI_Controller {
 				/************** Husband  ****************/	
 				$int_subscriber_type_key=4;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";
+				//echo "int_subscriber_key=".$int_subscriber_key." ";
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Husband)";
+				//echo $slist->tx_mobile."(Husband)";
 				$services_days=364;
 					if($slist->tx_child_birth)
 					{					
@@ -186,23 +195,24 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_child_birth, 2, 2);
 					$yy='20'.substr($slist->tx_child_birth, 4, 2);			
 					$yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " DOB=".$yyyymmdd;
+					//echo " DOB=".$yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
@@ -211,10 +221,11 @@ class Active_subscriber extends CI_Controller {
 				/************** Mother  ****************/	
 				$int_subscriber_type_key=5;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";
+				//echo "int_subscriber_key=".$int_subscriber_key." ";
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Mother)";
+				//echo $slist->tx_mobile."(Mother)";
 				$services_days=364;
 					if($slist->tx_child_birth)
 					{					
@@ -222,23 +233,24 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_child_birth, 2, 2);
 					$yy='20'.substr($slist->tx_child_birth, 4, 2);			
 					$yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " DOB=".$yyyymmdd;
+					//echo " DOB=".$yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
-					$service_from=$this->general_model->get_form_date($yyyymmdd,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
@@ -247,10 +259,11 @@ class Active_subscriber extends CI_Controller {
 				/************** Mother-in-Law  ****************/	
 				$int_subscriber_type_key=6;
 				$int_subscriber_key	=$slist->int_subscriber_key;
-				echo "int_subscriber_key=".$int_subscriber_key." ";
+				//echo "int_subscriber_key=".$int_subscriber_key." ";
+				echo $int_subscriber_key." ";	
 				$tx_reg_id=$slist->tx_reg_id;
 				//echo "tx_reg_id=".$int_subscriber_key." ";
-				echo $slist->tx_mobile."(Mother-in-Law)";
+				//echo $slist->tx_mobile."(Mother-in-Law)";
 				$services_days=364;
 					if($slist->tx_child_birth)
 					{					
@@ -258,27 +271,28 @@ class Active_subscriber extends CI_Controller {
 					$mm=substr($slist->tx_child_birth, 2, 2);
 					$yy='20'.substr($slist->tx_child_birth, 4, 2);			
 					$yyyymmdd=$yy.'-'.$mm.'-'.$dd;
-					echo " DOB=".$yyyymmdd;
+					//echo " DOB=".$yyyymmdd;
 					$mobile_operator=substr($slist->tx_mobile, 2, 1);
 					//echo " Operator=".$mobile_operator;
 					$dtt_registration=$slist->dtt_registration;
 					//echo "Reg. Date=".$dtt_registration;
 					$dtt_deregistration=$slist->dtt_deregistration;
 					//echo "De. Reg. Date=".$dtt_deregistration;
+					$tx_distribution_channel=$slist->tx_distribution_channel;
 					////////////////// Calculated Date /////////////////////					 
 					$date = strtotime($yyyymmdd);
 					$date = strtotime("+52 week", $date);
 					$calculated_date =date('Y-m-d', $date);
-					$service_from=$this->general_model->get_form_date($calculated_date,$date_from,date("Y-m-d", strtotime($dtt_registration)));
+					$service_from=$this->general_model->get_form_date($yyyymmdd,date("Y-m-d", strtotime($dtt_registration)));
 					if($dtt_deregistration)
 					$dett_deregistration=date("Y-m-d", strtotime($dtt_deregistration));
 					else
 					$dett_deregistration=NULL;
-					$service_to=$this->general_model->get_to_date($calculated_date,$date_to,$dett_deregistration);
+					$service_to=$this->general_model->get_to_date($calculated_date,$dett_deregistration);
 					}
 					
 				}
-				echo "<br>";
+				//echo "<br>";
 				
 			}
 		
@@ -298,15 +312,16 @@ class Active_subscriber extends CI_Controller {
 							'calculated_date'=>$calculated_date,
 							'service_from'=>$service_from,
 							'service_to'=>$service_to,						
-							'days'=>$services_days,						
+							'days'=>$services_days,
+							'tx_distribution_channel'=>$tx_distribution_channel,
 							'data_source'=>'t_subscribers'
 							);
 			
-			echo "<pre>";
+			/*echo "<pre>";
 			print_r($insert_data);
-			echo "</pre>";
+			echo "</pre>";*/
 			
-			/*$success_or_fail1=$this->general_model->save_into_table('t_subscribers_for_report', $insert_data);
+			$success_or_fail1=$this->general_model->save_into_table('t_subscribers_for_report', $insert_data);
 				if($success_or_fail1)
 				{
 				// Update the status
@@ -314,17 +329,17 @@ class Active_subscriber extends CI_Controller {
 								  'migration_status'=>1
 								 );
 				$this->general_model->update_table('t_subscribers', $table_data,'int_subscriber_key', $int_subscriber_key);
-				}*/
+				}
 				
 			}
-			/*else
+			else
 			{
 			$table_data=array(
 								  'migration_status'=>2
 								 );
 				$this->general_model->update_table('t_subscribers', $table_data,'int_subscriber_key', $int_subscriber_key);	
 									
-			}*/
+			}
 		}// End foreach		
 		$this->load->view('active_subscriber', isset($data) ? $data : NULL);	
 		
